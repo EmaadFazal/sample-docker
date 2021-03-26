@@ -51,6 +51,9 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+app.get('/test', function(req,res){
+  res.send("hello world")
+})
 mongoose
   .connect(
     'mongodb://mongo:27017/MLB',
