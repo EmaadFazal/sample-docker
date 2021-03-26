@@ -1,0 +1,38 @@
+{
+    "AWSEBDockerrunVersion":2,
+    "containerDefinitions":[
+        {
+            "name":"client",
+            "image":"fazale/client",
+            "hostname":"client",
+            "essential":false,
+            "memory": 128 
+        },
+        {
+            "name":"api",
+            "image":"fazale/backend",
+            "hostname":"api",
+            "essential":false,
+            "memory": 128 
+        },
+        {
+            "name":"mongo",
+            "image":"mongo:bionic",
+            "essential":false,
+            "memory": 128 
+        },
+        {
+            "name":"nginx",
+            "image":"fazale/nginx",
+            "essential":true,
+            "memory": 128,
+            "portMappings":[
+                {
+                    "hostPort":80,
+                    "containerPort":80
+                }
+            ],
+            "links":["client","api"]
+        }
+    ]
+}
