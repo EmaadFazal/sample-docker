@@ -7,6 +7,8 @@ services:
 
 after_success:
   - docker build -t fazale/frontend ./frontend
+  - docker build -t fazale/nginx ./nginx
+  - docker build -t fazale/backend ./backend
 
 
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
