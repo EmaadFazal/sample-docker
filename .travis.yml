@@ -11,4 +11,8 @@ after_success:
   - docker build -t fazale/backend ./backend
 
 
+  - docker push fazale/frontend
+  - docker push fazale/nginx
+  - docker push fazale/backend
+
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
