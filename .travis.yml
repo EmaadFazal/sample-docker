@@ -20,13 +20,13 @@ after_success:
 
 
 deploy:
-provider: elasticbeanstalk
-region: us-east-1
-app: sample-docker
-env: Sampledocker-env
-bucket_name: elasticbeanstalk-us-east-1-675359431836
-bucket_path: docker-sample-docker
-on:
-  branch: master
-access_key_id: $AWS_ACCESS_KEY
-secret_access_key: $AWS_SECRET_KEY
+  provider: elasticbeanstalk
+  region: us-east-1
+  app: sample-docker
+  env: Sampledocker-env
+  bucket_name: elasticbeanstalk-us-east-1-675359431836
+  bucket_path: docker-sample-docker
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
